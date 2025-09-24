@@ -1,0 +1,3 @@
+/home/poguel/Documents/cg/esfera-3d/build/CMakeFiles/main.dir
+/home/poguel/Documents/cg/esfera-3d/build/CMakeFiles/edit_cache.dir
+/home/poguel/Documents/cg/esfera-3d/build/CMakeFiles/rebuild_cache.dir
