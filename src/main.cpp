@@ -90,7 +90,7 @@ int main(){
                     // Intensidade especular
                     Vector3 luz_esp(1, 1, 1);
                     Vector3 mat_esp(.7, 0, 0);
-                    int brightness = 1;
+                    int brightness = 1; // nível de foco da luz
                     Vector3 reflection(reflect(normal, dir_luz));
                     float i_esp = pow(std::max(0.0f, dot(reflection, dr_inv)), brightness);
                     Vector3 cor_esp(
