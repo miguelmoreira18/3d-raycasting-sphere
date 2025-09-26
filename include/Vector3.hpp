@@ -10,10 +10,7 @@ public:
   Vector3(float x, float y, float z);
 
   // Métodos
-  void normalize();
   float length() const;
-  float dot(const Vector3 &o) const;
-  Vector3 reflect(const Vector3 &l, const Vector3 &n) const;
   void clamp();
 
   // Operadores
@@ -27,5 +24,9 @@ public:
   Vector3 &operator*=(float escalar);
   Vector3 &operator/=(float escalar);
 };
+
+Vector3 normalize(Vector3& o);
+float dot(const Vector3 &o, const Vector3 &a);
+Vector3 reflect(const Vector3 &n, const Vector3 &l);
 
 #endif

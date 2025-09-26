@@ -15,18 +15,13 @@ Vector3::Vector3(float x, float y, float z) {
 
 float Vector3::length() const { return std::sqrt(x * x + y * y + z * z); }
 
-void Vector3::normalize() {
-  float len = length();
-  if (len > 0.00001f) {
-    x /= len;
-    y /= len;
-    z /= len;
-  }
+Vector3 normalize(Vector3 &o) {
+  return o / o.length();
 }
 
 // Produto escalar
-float Vector3::dot(const Vector3 &o) const {
-  return x * o.x + y * o.y + z * o.z;
+float dot(const Vector3 &o, const Vector3 &a) {
+  return o.x * a.x + o.y * a.y + o.z * a.z;
 }
 
 // Operadores
@@ -75,9 +70,9 @@ Vector3 &Vector3::operator/=(float escalar) {
 }
 
 // Reflexo
-Vector3 Vector3::reflect(const Vector3 &l, const Vector3 &n) const {
-  float a = 2*l.dot(n);
-  return n*a - l;
+Vector3 reflect(const Vector3 &n, const Vector3 &l) {
+  // 2*(n.l)*n-l
+  return n*(2*dot(n, l))-l;
 }
 
 // Clamping
